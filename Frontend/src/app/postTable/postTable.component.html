@@ -1,0 +1,84 @@
+<div class="card-body">
+  <div class="table-responsive">
+
+    <div class="input-group">
+      <input type="text" [(ngModel)]="searchInput" class="search form-control" placeholder="Search post">
+      <div class="input-group-append">
+        <button class="btn btn-secondary" (click)="search()" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <button (click)="refreshSearch()" class="btn btn-info ml-auto">
+        Cancel Search
+      </button>
+    </div>
+
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead *ngIf='posts[0]'>
+              <tr>
+                <th>{{posts[0].postTitle}}</th>
+                <th>{{posts[0].postAuthor}}</th>
+                <th>{{posts[0].postDate}}</th>
+                <th>{{comment1Count}} comments</th>
+              </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let tableData of comment1">
+                <td>{{tableData.commentBody}}</td>
+                <td>{{tableData.commentAuthor}}</td>
+                <td>{{tableData.commentDate}}</td>
+                <td><i class="fas fa-chevron-up text-success"></i> {{tableData.commentLike}}   <i class="fas fa-chevron-down text-danger"></i> {{tableData.commentDislike}}</td>
+            </tr>
+
+          </tbody>
+
+          <thead *ngIf='posts[1]'>
+            <tr>
+              <th>{{posts[1].postTitle}}</th>
+              <th>{{posts[1].postAuthor}}</th>
+              <th>{{posts[1].postDate}}</th>
+              <th>{{comment2Count}} comments</th>
+            </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let tableData of comment2">
+              <td>{{tableData.commentBody}}</td>
+              <td>{{tableData.commentAuthor}}</td>
+              <td>{{tableData.commentDate}}</td>
+              <td><i class="fas fa-chevron-up text-success"></i> {{tableData.commentLike}} <i class="fas fa-chevron-down text-danger"></i> {{tableData.commentDislike}}</td>
+          </tr>
+
+        </tbody>
+
+        <thead *ngIf='posts[2]'>
+          <tr>
+            <th>{{posts[2].postTitle}}</th>
+            <th>{{posts[2].postAuthor}}</th>
+            <th>{{posts[2].postDate}}</th>
+            <th>{{comment3Count}} comments</th>
+          </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let tableData of comment3">
+            <td>{{tableData.commentBody}}</td>
+            <td>{{tableData.commentAuthor}}</td>
+            <td>{{tableData.commentDate}}</td>
+            <td><i class="fas fa-chevron-up text-success"></i> {{tableData.commentLike}} <i class="fas fa-chevron-down text-danger"></i> {{tableData.commentDislike}}</td>
+        </tr>
+
+      </tbody>
+      </table>
+
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+
+  </div>
+</div>
