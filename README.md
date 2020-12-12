@@ -4,6 +4,6 @@ I could not implement pagination because I am using sql server 2008 and it was t
 
 <p align="center"> 
     <a href="https://tasin5541.github.io" target="_blank">
-    <img src="/Screenshot(10).png" align="center"></img>
+    <img src="/Screenshot (10).png" align="center"></img>
     </a>
 </p>
